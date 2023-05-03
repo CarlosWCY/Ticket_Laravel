@@ -25,6 +25,14 @@ The team is conformed by:
 - Carlos Walter Corrales Yucra
 - Rodrigo Bernardo Condori Gutierrez
 
+## Requirements for the Project
+
+The next tecnology must be installed:
+
+- Node.js
+- Composer
+- php8.2
+
 ## How to Run the App
 
 1. Download the ZIP file from the project
