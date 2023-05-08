@@ -2,7 +2,7 @@
 
 ## Project's Name
 
-Products Form Module (Módulo de formulario de productos - 2 tablas)
+Products Form Module (Módulo de formulario de productos - 5 tablas)
 
 ## About the Project
 
