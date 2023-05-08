@@ -6,7 +6,7 @@ Products Form Module (Módulo de formulario de productos - 2 tablas)
 
 ## About the Project
 
-The objective of the Project is to create a form module for a store that sells products, tracking the products and having adittional functionality with the form, it that has two components:
+The objective of the Project is to create a form module for a store that sells products, tracking the products and having adittional functionality with the form, it has two components:
 
 - Client Form
         - It can add a client
@@ -42,7 +42,7 @@ The next tecnology must be installed:
 2. Having the DataBase running in docker
 
 
-3. Open de folder of the file in VScode
+3. Open the folder of the file in VScode
 
     ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/openVScode.PNG)
 
@@ -125,7 +125,7 @@ The next tecnology must be installed:
     If you don't have a database in docker
     
     ```
-      npm install && composer update && npm run build && php artisan serve
+      npm install && composer update --ignore-platform-reqs && npm run build && php artisan serve
     ```
 
 7. Go to the browser with ip 127.0.0.1:8000
