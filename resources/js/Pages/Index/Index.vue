@@ -1,4 +1,5 @@
 <template>
+
     <MainLayout>
         This is the HOME PAGE!!
     </MainLayout>

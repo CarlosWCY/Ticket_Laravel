@@ -2,14 +2,14 @@
 
 ## Project's Name
 
-Products Form Module (Módulo de formulario de productos - 2 tablas)
+Products Form Module (Módulo de formulario de productos - 5 tablas)
 
 ## About the Project
 
 The objective of the Project is to create a form module for a store that sells products, tracking the products and having adittional functionality with the form, it has two components:
 
 - Client Form
-        - It can add a client
+        - It can add a cliente
         - It can update a client
         - It can search a client
 - Product Form
