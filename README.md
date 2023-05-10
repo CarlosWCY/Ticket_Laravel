@@ -32,6 +32,7 @@ The next tecnology must be installed:
 - Node.js
 - Composer
 - php8.2
+- docker desktop
 
 ## How to Run the App
 

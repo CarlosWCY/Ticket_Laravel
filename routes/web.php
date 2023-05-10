@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/form2', [IndexController::class, 'form2']);
