@@ -1,6 +1,6 @@
 <template>
     <MainLayout>
-        This is the HOME PAGE!!
+        This is the 2 table form Page
     </MainLayout>
 </template>
 
