@@ -22,4 +22,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/form2', [IndexController::class, 'form2']);
 
-Route::resource('cliente', ClienteController::class)->only(['index','show', 'create','store']);
+Route::resource('cliente', ClienteController::class);

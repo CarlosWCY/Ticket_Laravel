@@ -1,6 +1,6 @@
 <template>
     <MainLayout></MainLayout>
-    <form @submit.prevent="create">
+    <form @submit.prevent="update">
         <div>
             <div>
                 <label>Nombre</label>
@@ -33,7 +33,7 @@
                 <div v-if="form.errors.numero_celular">{{ form.errors.numero_celular }}</div>
             </div>
             <div>
-                <button type="submit">Crear</button>
+                <button type="submit">Edit</button>
             </div>
         </div>
     </form>
@@ -43,17 +43,19 @@
 import { reactive } from 'vue'
 import { useForm } from '@inertiajs/vue3'
 import MainLayout from '../../Layouts/MainLayout.vue';
-
+const props = defineProps({
+    cliente: Object,
+})
 const form = useForm({
-    nombre: null,
-    apellido_paterno: null,
-    apellido_materno: null,
-    dni: null,
-    direccion: null,
-    numero_celular: null
+    nombre: props.cliente.nombre,
+    apellido_paterno: props.cliente.apellido_paterno,
+    apellido_materno: props.cliente.apellido_materno,
+    dni: props.cliente.dni,
+    direccion: props.cliente.direccion,
+    numero_celular: props.cliente.numero_celular
 })
 
-const create = () => form.post(`/cliente`)
+const update = () => form.put(`/cliente/${props.cliente.id}`)
 </script>
 
 <style scoped>

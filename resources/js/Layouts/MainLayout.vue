@@ -1,7 +1,8 @@
 <template>
     <Link href="/">Home Page</Link>&nbsp;
     <Link href="/form2">2 Table Form Page</Link>&nbsp;
-    <Link href="/cliente">Cliente Page</Link>
+    <Link href="/cliente">Client Page</Link>&nbsp;
+    <Link href="/cliente/create">New Client</Link>
     <br>
 
     <div v-if="flashSuccess" class="success">
