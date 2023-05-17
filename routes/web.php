@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +20,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [IndexController::class, 'index']);
-
 Route::get('/form2', [IndexController::class, 'form2']);
+
+Route::resource('cliente', ClienteController::class);

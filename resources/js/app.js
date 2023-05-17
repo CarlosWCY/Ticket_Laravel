@@ -1,5 +1,6 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import '../css/app.css'
 
 createInertiaApp({
   resolve: name => {
@@ -10,5 +11,11 @@ createInertiaApp({
     createApp({ render: () => h(App, props) })
       .use(plugin)
       .mount(el)
+  },
+  progress: {
+    delay: 0,
+    color: '#29d',
+    includeCSS: true,
+    showSpinner: true,
   },
 })
