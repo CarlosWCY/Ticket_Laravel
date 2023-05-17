@@ -1,17 +1,32 @@
 <template>
-    <Link href="/">Home Page</Link>&nbsp;
-    <Link href="/form2">2 Table Form Page</Link>&nbsp;
-    <Link href="/cliente">Client Page</Link>&nbsp;
-    <Link href="/cliente/create">New Client</Link>
-    <br>
-
-    <div v-if="flashSuccess" class="success">
-        {{ flashSuccess }}
-    </div>
-    <br>
-    <slot>
-
-    </slot>
+    <header class="border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800 bg-white w-full">
+        <div class="container mx-auto">
+            <nav class="p-4 flex items-center justify-between">
+                <div class="text-xl text-blue-800 dark:text-blue-400 font-bold text-center">
+                    <Link href="/">Home Page</Link>
+                </div>
+                <div class="text-lg font-medium">
+                    <Link href="/form2">2 Table Form Page</Link>
+                </div>
+                <div class="text-lg font-medium">
+                    <Link href="/cliente">Client Page</Link>
+                </div>
+                <div>
+                    <Link href="/cliente/create"
+                        class="btn-primary">+ New
+                    Client</Link>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto">
+        <div v-if="flashSuccess"
+            class="mb-4 border rounded-md shadow-sm border-green-300 dark:border-green-600 bg-green-50 dark:bg-green-900 p-2">
+            {{ flashSuccess }}
+        </div>
+        <br>
+        <slot>Default</slot>
+    </main>
 </template>
 
 <script setup>
@@ -21,10 +36,3 @@ import { Link, usePage } from '@inertiajs/vue3'
 const page = usePage()
 const flashSuccess = computed(() => page.props.flash.success)
 </script>
-
-<style scoped>
-.success {
-    background-color: green;
-    color: white;
-}
-</style>
