@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Venta extends Model
 {
     use HasFactory;
+
+    protected $fillable =[
+        'id_cliente', 'tipo_comprobante', 'numero_comprobante', 'fecha', 'impuesto', 'total'
+    ];
 }

@@ -11,7 +11,5 @@ class IndexController extends Controller
         //dd(Cliente::all());
         return inertia('Index/Index');
     }
-    public function form2(){
-        return inertia('Index/Form2');
-    }
+
 }

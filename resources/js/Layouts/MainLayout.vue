@@ -6,7 +6,7 @@
                     <Link href="/">Home Page</Link>
                 </div>
                 <div class="text-lg font-medium">
-                    <Link href="/form2">2 Table Form Page</Link>
+                    <Link href="/venta">2 Table Form Page</Link>
                 </div>
                 <div class="text-lg font-medium">
                     <Link href="/cliente">Client Page</Link>
