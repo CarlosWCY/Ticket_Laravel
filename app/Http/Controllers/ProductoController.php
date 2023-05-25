@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Venta;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
-
-class VentaController extends Controller
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,9 @@ class VentaController extends Controller
     public function index()
     {
         return inertia(
-            'Venta/Index',
+            'Producto/ShowProduct',
             [
-                'ventas'=>Venta::all()
+                'productos'=>Producto::all()
             ]
         );
     }
@@ -26,7 +25,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Producto/CreateProduct');
     }
 
     /**
@@ -34,18 +33,19 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        Venta::create(
+        Producto::create(
             $request->validate([
-                'id_cliente'=>'required',
-                'tipo_comprobante'=>'required',
-                'numero_comprobante'=>'required',
-                'fecha'=>'required',
-                'impuesto'=>'required',
-                'total'=>'required'
+                'id_categoria'=>'required',
+                'codigo'=>'required',
+                'nombre'=>'required',
+                'precio_venta'=>'required',
+                'stock'=>'required',
+                'descripcion'=>'required',
+                'estado'=>'required',
             ])
         );
 
-        return redirect('/')->with('success','The Selling was completed!!');
+        return redirect('/')->with('success','The Product was created! :)');
     }
 
     /**

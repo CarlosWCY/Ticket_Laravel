@@ -18,4 +18,8 @@
     .btn-primary{
         @apply bg-red-800 hover:bg-red-600 text-white font-medium p-2 rounded-md
     }
+
+    .btn-secondary{
+        @apply bg-blue-800 hover:bg-blue-600 text-white font-medium p-2 rounded-md
+    }
 }

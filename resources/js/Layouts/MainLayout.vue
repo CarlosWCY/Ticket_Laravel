@@ -6,15 +6,25 @@
                     <Link href="/">Home Page</Link>
                 </div>
                 <div class="text-lg font-medium">
-                    <Link href="/venta">2 Table Form Page</Link>
+                    <Link href="/form2">2 Table Form Page</Link>
                 </div>
                 <div class="text-lg font-medium">
-                    <Link href="/cliente">Client Page</Link>
+                    <Link href="/pages">Pages</Link>
                 </div>
                 <div>
                     <Link href="/cliente/create"
                         class="btn-primary">+ New
                     Client</Link>
+                </div>
+                <div>
+                    <Link href="/producto_category/create"
+                        class="btn-primary">+ New
+                    Category</Link>
+                </div>
+                <div>
+                    <Link href="/producto/create"
+                        class="btn-primary">+ New
+                    Product</Link>
                 </div>
             </nav>
         </div>

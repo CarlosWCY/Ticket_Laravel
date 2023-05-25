@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Venta;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
-
-class VentaController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,9 @@ class VentaController extends Controller
     public function index()
     {
         return inertia(
-            'Venta/Index',
+            'Producto/ShowCategory',
             [
-                'ventas'=>Venta::all()
+                'categorias'=>Categoria::all()
             ]
         );
     }
@@ -26,7 +25,7 @@ class VentaController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Producto/CreateCategory');
     }
 
     /**
@@ -34,18 +33,16 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        Venta::create(
+        Categoria::create(
             $request->validate([
-                'id_cliente'=>'required',
-                'tipo_comprobante'=>'required',
-                'numero_comprobante'=>'required',
-                'fecha'=>'required',
-                'impuesto'=>'required',
-                'total'=>'required'
+                'nombre'=>'required',
+                'descripcion'=>'required',
+                'estado'=>'required',
+                
             ])
         );
 
-        return redirect('/')->with('success','The Selling was completed!!');
+        return redirect('/')->with('success','The Category was created! :)');
     }
 
     /**

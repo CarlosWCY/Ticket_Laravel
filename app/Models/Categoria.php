@@ -10,6 +10,6 @@ class Categoria extends Model
     use HasFactory;
 
     protected $fillable =[
-        'nombre', 'descripcion', 'estados'
+        'nombre', 'descripcion', 'estado'
     ];
 }
