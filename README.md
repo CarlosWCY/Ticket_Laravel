@@ -40,14 +40,11 @@ The next tecnology must be installed:
 
     ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/downloadZip.PNG)
 
-2. Having the DataBase running in docker
-
-
-3. Open the folder of the file in VScode
+2. Open the folder of the file in VScode
 
     ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/openVScode.PNG)
 
-4. Create a file .env and copy:
+3. Create a file .env and copy:
 
     ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/createEnv.PNG)
 
@@ -112,15 +109,23 @@ The next tecnology must be installed:
         VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
         
-5. Go to the folder in the Terminal
+4. Go to the folder in the Terminal
 
   ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/goTerminal.PNG)
 
-6. Write in the terminal the next command
+5. Open the docker desktop
+
+6. Write in the terminal the next command to create the database in docker
+
+  ```
+    docker compose up
+  ```
+
+7. Write in the terminal the next command
 
     If you have a database in docker
     ```
-      npm install && composer update --ignore-platform-reqs && php artisan db:wipe && php artisan migrate:refresh --seed && npm run build && php artisan serve
+      npm install && composer update --ignore-platform-reqs && php artisan db:wipe && php artisan migrate && npm run build && php artisan serve
     ```
     
     If you don't have a database in docker
@@ -129,7 +134,7 @@ The next tecnology must be installed:
       npm install && composer update --ignore-platform-reqs && npm run build && php artisan serve
     ```
 
-7. Go to the browser with ip 127.0.0.1:8000
+8. Go to the browser with ip 127.0.0.1:8000
 
     ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/runningCode.PNG)
     ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/indexPage.PNG)
