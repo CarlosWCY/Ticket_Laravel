@@ -16,6 +16,10 @@
     }
 
     .btn-primary{
-        @apply bg-green-800 hover:bg-green-600 text-white font-medium p-2 rounded-md
+        @apply bg-red-800 hover:bg-red-600 text-white font-medium p-2 rounded-md
+    }
+
+    .btn-secondary{
+        @apply bg-blue-800 hover:bg-blue-600 text-white font-medium p-2 rounded-md
     }
 }
