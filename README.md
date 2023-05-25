@@ -120,7 +120,7 @@ The next tecnology must be installed:
 
     If you have a database in docker
     ```
-      npm install && composer update && php artisan db:wipe && php artisan migrate:refresh --seed && npm run build && php artisan serve
+      npm install && composer update --ignore-platform-reqs && php artisan db:wipe && php artisan migrate:refresh --seed && npm run build && php artisan serve
     ```
     
     If you don't have a database in docker
