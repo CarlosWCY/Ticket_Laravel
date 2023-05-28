@@ -108,33 +108,41 @@ The next tecnology must be installed:
         VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
         VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
-        
-4. Go to the folder in the Terminal
+4. Change the next information in the .env file with your db_name and db_password
+  ```
+  DB_DATABASE=db_name
+  DB_USERNAME=root
+  DB_PASSWORD=db_password
+  ```
+5. Go to the docker-compose.yml and change de password for the same password in step 4
+  ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/dockerYml.PNG)
+6. Open the docker desktop
+7. Go to the folder in the Terminal
 
   ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/goTerminal.PNG)
 
-5. Open the docker desktop
-
-6. Write in the terminal the next command to create the database in docker
+8. Write in the terminal the next command to create the database in docker
 
   ```
     docker compose up
   ```
-
-7. Write in the terminal the next command
+9. I shoul look like this
+  ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/dockerUp.PNG)
+  and go to the http://127.0.0.1:8080/ to see if ADMINER IS WORKING
+10. Login using servidor as mysql, username as a root and the password in step 5 and press login 
+  ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/adminerLogin.PNG)
+  ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/adminerLogin.PNG)
+11. Create a database with the name in step 4.
+   ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/createDb.PNG)
+12. Now, write in the terminal the next command
 
     If you have a database in docker
     ```
       npm install && composer update --ignore-platform-reqs && php artisan db:wipe && php artisan migrate && npm run build && php artisan serve
     ```
-    
-    If you don't have a database in docker
-    
-    ```
-      npm install && composer update --ignore-platform-reqs && npm run build && php artisan serve
-    ```
+  And the output should be like this..
+  ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/appRunning.PNG)
+13. Go to the browser with ip 127.0.0.1:8000
 
-8. Go to the browser with ip 127.0.0.1:8000
-
-    ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/runningCode.PNG)
-    ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/indexPage.PNG)
+  ![alt text](https://raw.githubusercontent.com/CarlosWCY/Modulo_Formulario_Laravel/main/images/appWorking.PNG)
+And that is all!! the app is working, good luck and have fun!
