@@ -8,11 +8,36 @@
                 class="grid grid-cols-6 gap-4 w-1/2 border border-gray-200 dark:border-gray-800 rounded-md p-4 m-1  shadow-md dark:text-gray-300">
                 <div class="col-start-2 col-span-3">
                     <label class="label">Cliente ID</label>
-                    <input v-model="form.id_cliente" type="text" class="input">
+                    <input v-model="form.id_cliente" @click="isModalOpen = true" type="text" class="input">
+
+                    <div class="shadow-xl" v-if="isModalOpen">
+                        <div class="bg-white rounded-md " ref="modal">
+                            <div class="p-1">
+                                <VueMultiselect v-model="form.id_cliente" :options="clients" placeholder="Buscar Cliente" label="nombre" track-by="" id="id" @search-change="onSearchClientsChange" @input="onSelectedClient">
+                                </VueMultiselect>
+                            </div>
+                            <div class="p-4">
+
+                            </div>
+
+                            <div class="">
+                                <p @click="addClientOpen = true"
+                                    class="bg-white text-blue-600 rounded-b border-2 border-t-gray-400 p-2">+ Nuevo Cliente
+                                </p>
+                                <div class="absolute w-full bg-black bg-opacity-30 h-screen top-0 left-0 flex justify-center px-8"
+                                    v-if="addClientOpen">
+                                    <div class="p-4 bg-gray-700 self-start mt-32 max-w-screen-md rounded-md"
+                                        ref="modalClient">
+                                        <AddClient></AddClient>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                     <div v-if="form.errors.id_cliente" class="input-error">{{ form.errors.id_cliente }}</div>
-                </div>
-                <div class="col-span-1 pt-9">
-                    <Link href="/cliente/create" class="btn-primary">+Nuevo</Link>
                 </div>
                 <div class="col-start-2 col-span-4">
                     <label class="label">Fecha</label>
@@ -27,7 +52,8 @@
                 <div class="col-start-2 col-span-4">
                     <label class="label">Número de comprobante</label>
                     <input v-model="form.numero_comprobante" type="text" class="input">
-                    <div v-if="form.errors.numero_comprobante" class="input-error">{{ form.errors.numero_comprobante }}</div>
+                    <div v-if="form.errors.numero_comprobante" class="input-error">{{ form.errors.numero_comprobante }}
+                    </div>
                 </div>
             </div>
             <div>
@@ -64,8 +90,37 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import AddClient from '../Components/AddClient.vue'
 import { useForm } from '@inertiajs/vue3'
+import { ref } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import Select from '../Components/UI/Select.vue'
+import VueMultiselect from 'vue-multiselect'
+
+const selected = ref(null)
+const options = ref(['1', '2', '3'])
+defineProps({
+    clients: {
+        type: Array,
+        default: ()=>[],
+    }
+})
+
+function onSearchClientsChange(){
+    console.log('onSearchClientsChange')
+}
+function onSelectedClient(){
+    console.log('onSelectClient')
+}
+
+const isModalOpen = ref(false)
+const modal = ref(null)
+
+const addClientOpen = ref(false)
+const modalClient = ref(null)
+
+onClickOutside(modal, () => (isModalOpen.value = false))
+onClickOutside(modalClient, () => (addClientOpen.value = false))
 
 const form = useForm({
     id_cliente: null,
@@ -78,3 +133,4 @@ const form = useForm({
 
 const create = () => form.post(`/venta`)
 </script>
+

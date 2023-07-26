@@ -18,7 +18,13 @@ class IndexController extends Controller
     }
 
     public function form2(){
-        return Inertia('Venta/Form2');
+        return inertia(
+            'Venta/Form2',
+            [
+                'clients'=>Cliente::all()
+            ]
+        );
     }
+
 
 }
