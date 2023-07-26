@@ -1,7 +1,11 @@
 <template>
 
     <MainLayout>
-        This is the HOME PAGE!!
+        Sistema de generación de Tickets de Venta
+        Curso: EVALUACIÓN Y PRUEBAS DE SOFTWARE
+        Integrantes:
+        - Condori Gutierrez Rodrigo Bernardo
+        - Corrales Yucra Carlos Walter 
     </MainLayout>
 </template>
 
